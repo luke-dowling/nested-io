@@ -1,24 +1,21 @@
-interface action {
-  type: TodoActions;
-  payload?: ITodo | number;
+export interface action {
+  type: TodoActions
+  payload?: ITodo | number
 }
 
 export const todosReducer = (state: ITodo[], action: action) => {
-  if (!state) {
-    return [];
-  }
   switch (action.type) {
     case "ADD":
       if (typeof action.payload === "number") {
-        return state;
+        return state
       } else {
-        return [...state, action.payload!];
+        return [...state, action.payload!]
       }
     case "REMOVE":
-      return state;
+      return state
     case "TOGGLE":
-      return state;
+      return state
     default:
-      return state;
+      return state
   }
-};
+}
